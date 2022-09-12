@@ -18,7 +18,7 @@ Trajectories.Recovered=Trajectories.Recovered/896005;
 Trajectories.Extinct=Trajectories.Extinct/896005;
 VaccinationsPerDay.Vaccinations=VaccinationsPerDay.Vaccinations/896005;
 
-for i=490:491   %loop for all the days
+for i=490:493   %loop for all the days
     
     %--------DATA--------
 

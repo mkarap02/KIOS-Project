@@ -24,9 +24,9 @@ function [C,x,C_vec] = SystemIdentification(ClearedTrajectories,ClearedVaccinati
 
     %Epidem Function calling
     for k=2:T
-        vaccperday = ClearedVaccinations.Vaccinations(k-1)/896005;
+        vaccperday = ClearedVaccinations.Vaccinations(k-1);
         x(:,k) = Dynamics(dt, x(:,k-1), param, param1, param2, param3, vaccperday, gamma_i, gamma_a, gamma_d, gamma_h, ksi_i, ksi_d, mu_a, mu_h);
-        x(7,k) = ClearedTrajectories.VaccinatedSusceptible(k); %%% is k or k-1???*********            
+        x(7,k) = ClearedTrajectories.VaccinatedSusceptible(k);          
     end
 
     %Function to calculate Cost
