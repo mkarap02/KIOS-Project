@@ -1,10 +1,8 @@
 clc;
 clear all;
 
-n=473985;
-
 % Import the csv file in CasesData table
-CasesData = readtable('CasesData.csv');
+CasesData = readtable('CasesData-Copy.csv');
 
 %Function to filter bad data
 [tab]=Filtering();

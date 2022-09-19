@@ -4,7 +4,7 @@ function [tab] = Filtering()
     datetime.setDefaultFormats('defaultdate','dd/MM/yyyy')
     
     %Importing data from CasesData.csv file to a table named 'tab'
-    tab = readtable('CasesData.csv');
+    tab = readtable('CasesData-Copy.csv');
     tab = sortrows(tab,'FirstSampling','ascend');
     
     %Delete data that the date of the first Vaccine Dose is earlier than
@@ -22,8 +22,9 @@ function [tab] = Filtering()
     %date of the First Sampling.
     toDelete = tab.FirstSampling>tab.RecoveredDate;
     tab(toDelete,:) = [];
+
+    %Also deleted manually all the data that has Admission date and no
+    %Discharged date.
     
-    %Delete the data that the RecoveredDate is NaT.
-    tab = rmmissing(tab,'DataVariables',{'RecoveredDate'});
        
 end
